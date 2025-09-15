@@ -23,6 +23,8 @@ return {
       notification = {
         -- wo = { wrap = true } -- Wrap notifications
       },
+
+      input = {},
     },
   },
   keys = {
@@ -516,6 +518,7 @@ return {
     vim.api.nvim_create_autocmd('User', {
       pattern = 'VeryLazy',
       callback = function()
+        Snacks.input.enable()
         -- Setup some globals for debugging (lazy-loaded)
         _G.dd = function(...)
           Snacks.debug.inspect(...)
